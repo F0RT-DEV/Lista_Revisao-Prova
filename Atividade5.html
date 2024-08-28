@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lista de Itens</h1>
+    <ul id="lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button id="btn-adicionar">Adicionar Item</button>
+    <button id="btn-remover">Remover Último Item</button>
+
+    <script>
+        // Seleciona a lista e os botões
+        const lista = document.getElementById("lista");
+        const btnAdicionar = document.getElementById("btn-adicionar");
+        const btnRemover = document.getElementById("btn-remover");
+
+        // Contador para os novos itens
+        let contador = 4;
+        // Função para adicionar um novo item à lista
+        btnAdicionar.addEventListener("click", function() {
+            const novoItem = document.createElement("li"); //createElement cria uma nova tag(li) na lista.
+            novoItem.textContent = "Item " + contador;
+            lista.appendChild(novoItem); //a função appendChild adiciona esse Novo Item ao final da Lista
+            contador++;
+        });
+
+        // Função para remover o último item da lista
+        btnRemover.addEventListener("click", function() {
+            if (lista.lastElementChild) { //lastElementChild retorna o ultimo elemento/item da lista
+                lista.removeChild(lista.lastElementChild);
+            } else {
+                alert("Não há mais itens para remover.");
+            }
+        });
+    </script>
+
+</body>
+</html>

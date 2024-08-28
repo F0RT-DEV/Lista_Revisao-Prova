@@ -1,0 +1,37 @@
+<script>
+class Forma {
+    calcularArea(){
+        throw new Error("O método calcularArea() deve ser implementado nas subclasses");
+    }
+}
+
+class Quadrado extends Forma {
+    constructor(lado) {
+        super(); //Nesse caso, o super() está vazio porque o construtor da classe base não faz nada além do que o construtor padrão faria.
+        this.lado = lado;
+    }
+
+    calcularArea() {
+        return this.lado * this.lado;
+    }
+}
+
+class Circulo extends Forma {
+    constructor(raio) {
+        super();
+        this.raio = raio;
+    }
+
+    calcularArea() {
+        return Math.PI * this.raio * this.raio;
+    }
+}
+
+let quadrado = new Quadrado(4);
+let circulo = new Circulo(3);
+
+console.log(`Área do Quadrado: ${quadrado.calcularArea()}`);
+console.log(`Área do Círculo: ${circulo.calcularArea()}`);
+// basicamente ${} diz para o javaScript que o conteudo dentro do colchetes não e uma String
+
+</script>

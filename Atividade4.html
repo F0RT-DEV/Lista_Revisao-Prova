@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo com JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="mudar-cor">Mudar Cor de Fundo</button>
+
+    <script>
+        // Função para gerar uma cor aleatória
+        function gerarCorAleatoria() {
+            const letras = '0123456789ABCDEF'; 
+        // "0123456789ABCDEF" isso são as cores no formato hexadecimal que são representados por um codigo, exemplo FF5733 que é um vermelho claro.
+            let cor = '#';
+            for (let i = 0; i < 6; i++) {
+                cor += letras[Math.floor(Math.random() * 16)];
+                /*A cada iteração, o caractere gerado é concatenado à variável cor. Isso adiciona o caractere à string existente, 
+                formando progressivamente o código hexadecimal da cor.
+
+                Exemplo de iteração:
+                Primeira iteração: cor pode se tornar #F.
+                Segunda iteração: cor pode se tornar #FA.
+                Isso continua até que a string cor contenha 6 caracteres após o #. */
+            }
+            return cor;
+        }
+
+        // Seleciona o botão
+        const botao = document.getElementById("mudar-cor");
+
+        // Adiciona um evento de clique ao botão
+        botao.addEventListener("click", function() {
+            // Altera a cor de fundo do body
+            document.body.style.backgroundColor = gerarCorAleatoria();
+        });
+    </script>
+
+</body>
+</html>

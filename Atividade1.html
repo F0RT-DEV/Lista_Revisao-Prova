@@ -1,0 +1,52 @@
+<script>
+    class Carro {
+        constructor(marca, modelo, ano, cor){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.ano = ano;
+            this.cor = cor;
+        }
+        getDescricao(){
+            return console.log("Marca: "+this.marca+"\n"+"Modelo: "+this.modelo+"\n"+"Ano: "+this.ano+"\n"+"Cor: "+this.cor)
+        }
+    }
+
+    let carro = new Carro ("Lamborghini ", "Aventador Ultimae", 2011, "Azul");
+    carro.getDescricao()
+    
+
+/*  Jeito correto de fazer o codigo: 
+
+ class Carro {
+    constructor(marca, modelo, ano, cor) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+    }
+        descrever() {
+            return `Marca: ${this.marca}\nModelo: ${this.modelo}\nAno: ${this.ano}\nCor: ${this.cor}`;
+        }
+    }
+
+    let carro = new Carro("Lamborghini", "Aventador Ultimae", 2011, "Azul");
+    console.log(carro.descrever());
+    alert(carro.descrever());
+    document.write(carro.descrever());     
+
+Mudança:
+
+Método getDescricao: Em vez de usar console.log, seria melhor o método retornar uma string com a descrição. 
+Isso oferece mais flexibilidade ao código, permitindo usar a descrição de várias formas, como exibir no console, 
+em uma página HTML, etc. Agora, ele retorna uma string em vez de usar console.log.
+ 
+Função Metodo do codigo acima: 
+
+Aqui, descrever() é um método da classe Carro.
+Quando chamado, ele retorna uma descrição do carro usando as propriedades do objeto (acessadas via this).
+Vantagens de Usar Métodos:
+Organização do Código: Métodos ajudam a encapsular o comportamento de um objeto, mantendo o código mais modular e organizado.
+Reutilização: Um método pode ser reutilizado em diferentes instâncias do objeto sem duplicar o código.
+Interatividade: Permitem que os objetos "façam algo", ou seja, realizem ações baseadas em suas propriedades.
+*/
+</script>

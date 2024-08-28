@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Só sei que nada sei.</p>
+    <p>Gesonel o mestre do disfarçe.</p>
+    <p>Eu amo o Fort e o Douglas.</p>
+
+    <script>
+        //Seleciona todos os elementos <p> na página e retorna uma NodeList contendo todos esses elementos.
+        let paragrafos = document.querySelectorAll("p");
+
+        //o método forEach() é utilizado para iterar( na programação itera e o mesmo que loop) sobre essa lista de parágrafos e, 
+        //para cada um, o texto (textContent) é alterado para "Parágrafo alterado pelo JS
+        paragrafos.forEach(function(paragrafo) {
+            paragrafo.textContent = "Parágrafo alterado pelo JS";
+        });
+    </script>
+
+</body>
+</html>
